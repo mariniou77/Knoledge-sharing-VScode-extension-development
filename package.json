@@ -1,6 +1,6 @@
 {
-  "name": "knoledge-sharing",
-  "displayName": "Knoledge Sharing",
+  "name": "knowledge-sharing",
+  "displayName": "Knowledge Sharing",
   "description": "",
   "version": "0.0.1",
   "engines": {
@@ -10,13 +10,34 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:knoledge-sharing.helloWorld"
+    "onCommand:knowledge-sharing.helloWorld"
   ],
   "main": "./out/extension.js",
   "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "knowledge-sharing",
+          "title": "Knowledge Sharing",
+          "icon": "media/activityBarIcon.svg"
+        }
+      ]
+    },  
+    "views": {
+      "knowledge-sharing": [
+        {
+          "id": "sites-sidebar",
+          "name": "Sites"
+        },
+        {
+          "id": "enviroments-sidebar",
+          "name": "Enviroments"
+        }
+      ]
+    },
     "commands": [
       {
-        "command": "knoledge-sharing.helloWorld",
+        "command": "knowledge-sharing.helloWorld",
         "title": "Hello World"
       }
     ]
