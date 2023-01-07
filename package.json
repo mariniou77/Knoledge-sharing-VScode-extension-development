@@ -1,6 +1,6 @@
 {
-  "name": "knowledge-sharing",
-  "displayName": "Knowledge Sharing",
+  "name": "daily-todo-list",
+  "displayName": "Daily Todo List",
   "description": "",
   "version": "0.0.1",
   "engines": {
@@ -14,24 +14,61 @@
   ],
   "main": "./out/extension.js",
   "contributes": {
+    "configuration":{
+      "title": "Daily Todo List",
+      "properties": {
+        "daily-todo-list.primary-list": {
+          "type":"array",
+          "default": [
+            "Breakfast",
+            "Brush Teeth",
+            "Shower",
+            "Cooking"
+          ],
+          "items": {
+            "type":"string"
+          },
+          "uniqueItems": true,
+          "description": "Habits that are high important daily for you"
+        },
+        "daily-todo-list.secondary-list": {
+          "type":"array",
+          "default": [
+            "Workout",
+            "Groceries",
+            "Cleaning",
+            "Family Dinner"
+          ],
+          "items": {
+            "type":"string"
+          },
+          "uniqueItems": true,
+          "description": "Habits that are high important weekly for you"
+        }
+      }
+    },
     "viewsContainers": {
       "activitybar": [
         {
-          "id": "knowledge-sharing",
-          "title": "Knowledge Sharing",
+          "id": "daily-todo-list",
+          "title": "Daily Todo List",
           "icon": "media/activityBarIcon.svg"
         }
       ]
     },  
     "views": {
-      "knowledge-sharing": [
+      "daily-todo-list": [
         {
-          "id": "sites-sidebar",
-          "name": "Sites"
+          "id": "primary-list",
+          "name": "Primary List"
         },
         {
-          "id": "enviroments-sidebar",
-          "name": "Enviroments"
+          "id": "secondary-list",
+          "name": "Secondary List"
+        },
+        {
+          "id": "todays-todo-list",
+          "name": "Today's Todo List"
         }
       ]
     },
