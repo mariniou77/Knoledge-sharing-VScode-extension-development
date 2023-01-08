@@ -10,14 +10,15 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:knowledge-sharing.helloWorld"
+    "onCommand:knowledge-sharing.helloWorld",
+    "onView:dailyTodoList"
   ],
   "main": "./out/extension.js",
   "contributes": {
     "configuration":{
       "title": "Daily Todo List",
       "properties": {
-        "daily-todo-list.primary-list": {
+        "dailyTodoList.primaryList": {
           "type":"array",
           "default": [
             "Breakfast",
@@ -31,7 +32,7 @@
           "uniqueItems": true,
           "description": "Habits that are high important daily for you"
         },
-        "daily-todo-list.secondary-list": {
+        "dailyTodoList.secondaryList": {
           "type":"array",
           "default": [
             "Workout",
@@ -50,24 +51,24 @@
     "viewsContainers": {
       "activitybar": [
         {
-          "id": "daily-todo-list",
+          "id": "dailyTodoList",
           "title": "Daily Todo List",
           "icon": "media/activityBarIcon.svg"
         }
       ]
     },  
     "views": {
-      "daily-todo-list": [
+      "dailyTodoList": [
         {
-          "id": "primary-list",
+          "id": "primaryList",
           "name": "Primary List"
         },
         {
-          "id": "secondary-list",
+          "id": "secondaryList",
           "name": "Secondary List"
         },
         {
-          "id": "todays-todo-list",
+          "id": "todaysTodoList",
           "name": "Today's Todo List"
         }
       ]
