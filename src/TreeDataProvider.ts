@@ -20,9 +20,6 @@ export class TreeDataProvider implements vscode.TreeDataProvider<Items> {
         this.config = this.settingsAccess.readConfig();
     };
 
-    /**
-     * @void refresh the display with the latest data at the config.json
-     */
     refresh(): void {
         this._onDidChangeTreeData.fire();
     }
@@ -38,9 +35,6 @@ export class TreeDataProvider implements vscode.TreeDataProvider<Items> {
 
     };
 
-    /**
-     * @returns all the elements we want to display from the config.json as tree elements 
-     */
     private getConfigurations(): Items[] {
 
         const toHabits = (itemName: string): Items => {

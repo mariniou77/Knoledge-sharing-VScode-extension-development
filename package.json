@@ -73,10 +73,31 @@
         }
       ]
     },
+    "menus": {
+      "view/item/context": [
+        {
+          "command": "pickPrimaryItem.inline",
+          "when": "view == primaryList || view == secondaryList",
+          "group": "inline"
+        },
+        {
+          "command": "pickPrimaryItem",
+          "when": "view == primaryList || view == secondaryList"
+        }
+      ]
+    },
     "commands": [
       {
-        "command": "knowledge-sharing.helloWorld",
-        "title": "Hello World"
+        "command": "pickPrimaryItem.inline",
+        "title": "Pick",
+        "icon":{
+          "light": "media/light/pick.svg",
+          "dark": "media/dark/pick.svg"
+        }
+      },
+      {
+        "command": "pickPrimaryItem",
+        "title": "Pick"
       }
     ]
   },
