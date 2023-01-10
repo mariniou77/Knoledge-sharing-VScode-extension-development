@@ -9,17 +9,41 @@ export function activate(context: vscode.ExtensionContext) {
 
 	vscode.window.createTreeView('primaryList', {
 
-		treeDataProvider: primaryListProvider,
-		canSelectMany: true
+		treeDataProvider: primaryListProvider
 
+	});
+
+	vscode.commands.registerCommand('refreshPanel.primaryList', () => {
+
+		const primaryListProvider = new TreeDataProvider("primary list", (c) => c.primaryList);
+
+		vscode.window.createTreeView('primaryList', {
+
+			treeDataProvider: primaryListProvider
+	
+		});
+
+		vscode.window.showInformationMessage("Primary List refresh Successfully");
 	});
 
 	const secondaryListProvider = new TreeDataProvider("secondary list", (c) => c.secondaryList);
 
 	vscode.window.createTreeView('secondaryList', {
 
-		treeDataProvider: secondaryListProvider,
-		canSelectMany: true
+		treeDataProvider: secondaryListProvider
+
+	});
+
+	vscode.commands.registerCommand('refreshPanel.secondaryList', () => {
+
+		const secondaryListProvider = new TreeDataProvider("secondary list", (c) => c.secondaryList);
+
+		vscode.window.createTreeView('secondaryList', {
+
+			treeDataProvider: secondaryListProvider
+	
+		});
+		vscode.window.showInformationMessage("Secondary List refresh Successfully");
 
 	});
 
@@ -27,8 +51,22 @@ export function activate(context: vscode.ExtensionContext) {
 
 	vscode.window.createTreeView('todaysTodoList', {
 
-		treeDataProvider: pickedDataProvider,
-		canSelectMany: true
+		treeDataProvider: pickedDataProvider
+
+	});
+
+	vscode.commands.registerCommand('refreshPanel.todaysTodoList', () => {
+
+		pickedDataProvider.refresh();
+		vscode.window.showInformationMessage("Today's Todo List refresh Successfully");
+
+	});
+
+	vscode.commands.registerCommand('deleteItem', (item: Items) => {
+
+		pickedDataProvider.delete(item.label);
+		pickedDataProvider.refresh();
+		vscode.window.showInformationMessage(item.label + " was successfully removed from Taday's Todo List");
 
 	});
 
@@ -50,9 +88,9 @@ export function activate(context: vscode.ExtensionContext) {
 
 		if (insert) {
 			pickedDataProvider.refresh();
-			vscode.window.showInformationMessage(item.label + " : has picked from " + item.contextValue + " to Rollout");
+			vscode.window.showInformationMessage(item.label + " : has picked from " + item.contextValue + " at Today's Todo List");
 		} else {
-			vscode.window.showErrorMessage(item.label + " : already exists from " + item.contextValue + " to Rollout");
+			vscode.window.showErrorMessage(item.label + " : already exists from " + item.contextValue + " at Today's Todo List");
 		}
 
 	}

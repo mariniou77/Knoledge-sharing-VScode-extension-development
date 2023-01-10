@@ -74,7 +74,28 @@
       ]
     },
     "menus": {
+      "view/title": [
+        {
+          "command": "refreshPanel.primaryList",
+          "when": "view == primaryList",
+          "group": "navigation"
+        },
+        {
+          "command": "refreshPanel.secondaryList",
+          "when": "view == secondaryList",
+          "group": "navigation"
+        },
+        {
+          "command": "refreshPanel.todaysTodoList",
+          "when": "view == todaysTodoList",
+          "group": "navigation"
+        }
+      ],
       "view/item/context": [
+        {
+          "command": "deleteItem",
+          "when": "view == todaysTodoList"
+        },
         {
           "command": "pickPrimaryItem.inline",
           "when": "view == primaryList || view == secondaryList",
@@ -87,6 +108,34 @@
       ]
     },
     "commands": [
+      {
+        "command": "deleteItem",
+        "title": "Delete"
+      },
+      {
+        "command": "refreshPanel.primaryList",
+        "title": "Refresh",
+        "icon": {
+          "light": "media/light/refresh.svg",
+          "dark": "media/dark/refresh.svg"
+        }
+      },
+      {
+        "command": "refreshPanel.secondaryList",
+        "title": "Refresh",
+        "icon": {
+          "light": "media/light/refresh.svg",
+          "dark": "media/dark/refresh.svg"
+        }
+      },
+      {
+        "command": "refreshPanel.todaysTodoList",
+        "title": "Refresh",
+        "icon": {
+          "light": "media/light/refresh.svg",
+          "dark": "media/dark/refresh.svg"
+        }
+      },
       {
         "command": "pickPrimaryItem.inline",
         "title": "Pick",

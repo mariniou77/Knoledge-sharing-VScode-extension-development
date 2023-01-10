@@ -1,6 +1,5 @@
 import * as vscode from 'vscode';
 import { Items } from './Items';
-import { SettingsAccess } from './SettingsAccess';
 
 export class PickedDataProvider implements vscode.TreeDataProvider<any> {
 
