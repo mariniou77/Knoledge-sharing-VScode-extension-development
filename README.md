@@ -378,24 +378,24 @@ First thing we need to do, is to declare the command for picking at the package.
 
 ```json
 "commands": [
-      {
-        "command": "pickPrimaryItem",
-        "title": "Pick"
-      }
-    ]
+    {
+        "command": "pickPrimaryItem",
+        "title": "Pick"
+    }
+]
 ```
 
 Now, we need to use the contributes.views actions. The action we need for the right clicking menu is located at the view/item/context : 
 
 ```json
 "menus": {
-      "view/item/context": [
-        {
-          "command": "pickPrimaryItem",
-          "when": "view == primaryList || view == secondaryList"
-        }
-      ]
-    },
+      "view/item/context": [
+        {
+          "command": "pickPrimaryItem",
+          "when": "view == primaryList || view == secondaryList"
+        }
+      ]
+    },
 ```
 
 ![](./images/right%20clicking%20menu.png)
