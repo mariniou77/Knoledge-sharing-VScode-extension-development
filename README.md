@@ -413,7 +413,8 @@ Since we are talking about icon button, it is necessary to find an icon. Once ag
           "light": "media/light/pick.svg",
           "dark": "media/dark/pick.svg"
         }
-      },
+      }
+]
 ```
 
 ```json
@@ -424,6 +425,8 @@ Since we are talking about icon button, it is necessary to find an icon. Once ag
           "when": "view == primaryList || view == secondaryList",
           "group": "inline"
         },
+       ]
+}
 ```
 
 ![](./images/inline%20icon%20button.png)
@@ -627,7 +630,8 @@ First, as we made the pick option at the two first panels, we are going to make 
       {
         "command": "deleteItem",
         "title": "Delete"
-      },
+      }
+]
 ```
 
 ```json
@@ -635,7 +639,8 @@ First, as we made the pick option at the two first panels, we are going to make 
         {
           "command": "deleteItem",
           "when": "view == todaysTodoList"
-        },
+        }
+]
 ```
 
 Now, let's implement the function at the PickedDataProvider :
@@ -662,7 +667,7 @@ And finally, the only thing left is to call the function whenever the user delet
 
 ## **7.Publish the extension**
 
-Coming up to a conclusion, when we create the extension we want we need to share it to the world. In this documentation, we are going to explain how to create an .nsix  file and share it privately but of course you can publish it to the market of Visual Studio Code by following the steps on this site.
+Coming up to a conclusion, when we create the extension we want, we need to share it to the world. In this documentation, we are going to explain how to create an .nsix  file and share it privately but of course you can publish it to the market of Visual Studio Code by following the steps on this site.
 
 First of all, we need to install this library:  vscode/vsce
 
