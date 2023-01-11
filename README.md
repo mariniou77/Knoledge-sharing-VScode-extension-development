@@ -406,27 +406,24 @@ Since we are talking about icon button, it is necessary to find an icon. Once ag
 
 ```json
 "commands": [
-      {
-        "command": "pickPrimaryItem.inline",
-        "title": "Pick",
-        "icon":{
-          "light": "media/light/pick.svg",
-          "dark": "media/dark/pick.svg"
-        }
-      }
-]
+      {
+        "command": "pickPrimaryItem.inline",
+        "title": "Pick",
+        "icon":{
+          "light": "media/light/pick.svg",
+          "dark": "media/dark/pick.svg"
+        }
+      },
 ```
 
 ```json
 "menus": {
-      "view/item/context": [
-        {
-          "command": "pickPrimaryItem.inline",
-          "when": "view == primaryList || view == secondaryList",
-          "group": "inline"
-        },
-       ]
-}
+      "view/item/context": [
+        {
+          "command": "pickPrimaryItem.inline",
+          "when": "view == primaryList || view == secondaryList",
+          "group": "inline"
+        },
 ```
 
 ![](./images/inline%20icon%20button.png)
@@ -627,20 +624,18 @@ First, as we made the pick option at the two first panels, we are going to make 
 
 ```json
 "commands": [
-      {
-        "command": "deleteItem",
-        "title": "Delete"
-      }
-]
+      {
+        "command": "deleteItem",
+        "title": "Delete"
+      },
 ```
 
 ```json
 "view/item/context": [
-        {
-          "command": "deleteItem",
-          "when": "view == todaysTodoList"
-        }
-]
+        {
+          "command": "deleteItem",
+          "when": "view == todaysTodoList"
+        },
 ```
 
 Now, let's implement the function at the PickedDataProvider :
